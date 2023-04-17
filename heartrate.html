@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+            body{
+                background-image: url('./images/ChubbyIlliterateCanadagoose-size_restricted.gif');
+                background-repeat: no-repeat;
+                background-attachment: fixed;  
+                background-size: cover;
+                font-family: Phantomsans, sans-serif;
+            }
+            
+            #class1{
+                background-color: white;
+               height: 10%;
+                width: 60%;
+                align-items: center;
+                text-align: center;
+                margin-top: 70%;
+                padding: 20%;
+                margin-left: 20%;
+                margin-right: 20%;
+                border: 3px solid rgb(0, 0, 0);
+                box-sizing: border-box;
+                border-radius: 20px;
+                box-shadow: 10px 10px 20px 0px rgb(0, 0, 0);
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div id="class1">
+            <h1 style="margin-bottom: 80%;">HEART RATE</h1>
+            <h1 id="setdata">--</h1>
+
+        </div>
+
+
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+        <script>
+
+const firebaseConfig = {
+    apiKey: "AIzaSyB-G5u-_0G3ni706t6PNXGwXj4rd2RNqCE",
+    authDomain: "monitor-data-ede65.firebaseapp.com",
+    databaseURL: "https://monitor-data-ede65-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "monitor-data-ede65",
+    storageBucket: "monitor-data-ede65.appspot.com",
+    messagingSenderId: "693010722093",
+    appId: "1:693010722093:web:e7e5a998a126122f4b37a4"
+  };
+
+          firebase.initializeApp(firebaseConfig);
+          // Fetch data from the Realtime Database
+        var database = firebase.database();
+        var ref = database.ref('/heart');
+        ref.on('value', gotData, errData);
+
+        function gotData(data) {    
+         var databaseData = data.val();
+         var data1=document.getElementById("setdata");
+         data1.innerHTML=databaseData;
+        console.log(databaseData);
+        }
+        function errData(err) {
+            console.log("Error reading data: ", err);
+        }
+
+        </script>
+        
+    </body>
+</html>

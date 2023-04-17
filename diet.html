@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./diet.css">
+        <script src="./diet.js"></script>
+    </head>
+
+    <body>
+        <h1 style="text-align: center;">Automatic Diet Recommendation System.</h1>
+    
+        <div class="container" >
+            <input type="text" placeholder="Enter Your Age" name="age" style="margin-top: 50px;" id="age">
+            <input type="text" placeholder="Enter Your Height (cm)" style="margin-top: 50px;" id="weight">
+            <input type="text" placeholder="Enter Your Weight (Kg)" style="margin-top: 50px;" id="height">
+            <br>
+         
+            
+            <div class="Gender" style="margin-top:50px;">
+               <label for="">Gender</label>
+            <input type="radio" id="Male" name="Gender" value="Male">
+            <label for="Male">Male</label>
+            <input type="radio" id="Female" name="Gender" value="Female">
+            <label for="css">Female</label>
+            </div>
+
+            <div class="dropdown" style="margin-top: 50px;">
+                
+                    <label for="browser">Activity </label>
+                    <input list="browsers" name="browser" id="browser">
+                    <datalist id="browsers">
+                      <option value="Little no exercise">
+                      <option value="Light exercise">
+                      <option value="Moderate exercise(3-5)days wk">
+                      <option value="Very active(6-7)days wk">
+                      <option value="Extra active (very active & physical job)">
+                    </datalist>
+                    
+                  
+              </div>
+
+              <div class="dropdown1" style="margin-top: 50px;" width="50%">
+                
+                <label for="browser">Choose your weight loss plan: </label>
+                <input list="weightplan" name="weight" id="weight">
+                <datalist id="weightplan">
+                  <option value="Maintain weight">
+                  <option value="Mild Weight loss">
+                  <option value="Weight loss">
+                  <option value="Extreme weight loss">
+                 
+                </datalist>
+
+                 </div>
+
+                 <div class="dropdown2" style="margin-top: 50px;">
+                
+                    <label for="browser">Meals Per day: </label>
+                    <input list="weightplan1" name="meals" id="weight1">
+                    <datalist id="weightplan1">
+                      <option value="3">
+                      <option value="4">
+                      <option value="5">
+                      
+                     
+                    </datalist>
+    
+                     </div>
+
+                     
+
+                     <button onclick="calculate()" style="margin-top:50px;" id="btn" >Generate Report</button>
+                     <br>
+                     <br>
+                     <br>
+                     <div id="table">
+                      
+                     </div>
+
+
+                     
+
+                    
+                
+              
+          </div>
+              
+              
+            
+       
+
+        
+
+
+    </body>
+</html>
